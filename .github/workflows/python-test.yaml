@@ -1,16 +1,16 @@
-name: Python Tests
-
 on: [push]
+name: Python tests
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [if [-f .python_version]; then cat .python_version else 3.9 fi]
+        python-version: [3.9]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
