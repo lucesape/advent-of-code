@@ -1,0 +1,16 @@
+name: Golang Tests
+
+on: [push]
+
+jobs:
+  checks:
+    name: run
+    runs-on: ubuntu-latest
+    steps:
+    - name: 
+      uses: cedrickring/golang-action/go1.15@1.6.0
+      env:
+        GO111MODULE: "on"
+        IMPORT: "io/ioutil"
+      with:
+        args: make test-go
