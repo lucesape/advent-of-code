@@ -1,12 +1,12 @@
 package main
 
 import (
+	"advent-of-code/advent_of_code/helpers"
 	"errors"
 	"fmt"
+	"os"
 	"sort"
 	"strconv"
-
-	helpers "github.com/thesammy2010/advent-of-code/advent_of_code/helpers"
 )
 
 func checkSum(x int, y int) (int, int, int, error) {
@@ -40,7 +40,11 @@ func makePairs(data []int) [][]int {
 }
 
 func main() {
-	inputData := helpers.ReadFileLineByLine("input.txt")
+	inputData, err := helpers.ReadFileLineByLine("advent_of_code/day1/input.txt")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 	inputDataIntegers := []int{}
 	for _, row := range inputData {
 		inputDataIntegers = append(inputDataIntegers, castToInt(row))
