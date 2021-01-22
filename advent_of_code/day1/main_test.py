@@ -13,9 +13,4 @@ class TestDay1(unittest.TestCase):
         input_data: List[int] = [1, 2, 3]
         expected_output: List[List[int]] = [[1, 2], [1, 3], [2, 3]]
         self.assertEqual(make_pairs(data=input_data), expected_output)
-
-    def test_cast_to_int(self) -> None:
-        input_data: str = "2345"
-        expected_output: int = 2345
-        self.assertEqual(cast_to_int(x=input_data), expected_output)
      

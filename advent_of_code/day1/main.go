@@ -5,11 +5,10 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"sort"
 	"strconv"
 )
 
-func checkSum(x int, y int) (int, int, int, error) {
+func CheckSum(x int, y int) (int, int, int, error) {
 	if x+y == 2020 {
 		return x, y, x * y, nil
 	}
@@ -24,14 +23,13 @@ func castToInt(x string) int {
 	return int(y)
 }
 
-func makePairs(data []int) [][]int {
+func MakePairs(data []int) [][]int {
 	list := make([][]int, 0)
 	// i and j are the pairs
 	for _, i := range data {
 		for _, j := range data {
 			if i != j {
 				tempList := []int{i, j}
-				sort.Ints(tempList)
 				list = append(list, tempList)
 			}
 		}
@@ -49,11 +47,12 @@ func main() {
 	for _, row := range inputData {
 		inputDataIntegers = append(inputDataIntegers, castToInt(row))
 	}
-	numberPairs := makePairs(inputDataIntegers)
+	numberPairs := MakePairs(inputDataIntegers)
 	for _, row := range numberPairs {
-		a, b, c, err := checkSum(row[0], row[1])
-		if err != nil {
+		a, b, c, err := CheckSum(row[0], row[1])
+		if err == nil {
 			fmt.Println(a, b, c)
+			break
 		}
 	}
 }
