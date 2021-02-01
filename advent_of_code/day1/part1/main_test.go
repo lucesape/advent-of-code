@@ -1,4 +1,4 @@
-package main
+package part1
 
 import (
 	"testing"
@@ -12,7 +12,7 @@ func TestCheckSum(t *testing.T) {
 
 	for i := range calculatedOutput {
 		if calculatedOutput[i] != expectedOutput[i] {
-			t.Errorf("Output mismatch. Expected %s. Got %s", expectedOutput, calculatedOutput)
+			t.Errorf("Output mismatch. Expected %s. Got %v", expectedOutput, calculatedOutput)
 			break
 		}
 	}
@@ -30,6 +30,22 @@ func TestMakePairs(t *testing.T) {
 				t.Error("Output mismatch", "Expected: ", expectedOutput, "Calculated: ", calculatedOutput)
 				break
 			}
+		}
+	}
+}
+
+func TestMain(t *testing.T) {
+	expectedOutput := []int{547, 1473, 805731}
+	co1, co2, co3, calculatedErr := Main("../input_test.txt")
+	calculatedOutput := []int{co1, co2, co3}
+
+	if calculatedErr != nil {
+		t.Errorf("%s", calculatedErr)
+	}
+	for i := range calculatedOutput {
+		if calculatedOutput[i] != expectedOutput[i] {
+			t.Errorf("Output mismatch. Expected %v. Got %v", expectedOutput, calculatedOutput)
+			break
 		}
 	}
 }

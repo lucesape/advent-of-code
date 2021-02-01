@@ -1,4 +1,4 @@
-package main
+package part1
 
 import (
 	"advent-of-code/advent_of_code/helpers"
@@ -15,7 +15,7 @@ func CheckSum(x int, y int) (int, int, int, error) {
 	return 0, 0, 0, errors.New("x & y do not add up to 2020")
 }
 
-func castToInt(x string) int {
+func CastToInt(x string) int {
 	y, err := strconv.ParseInt(x, 10, 64)
 	if err != nil {
 		fmt.Errorf("%s", err)
@@ -37,22 +37,26 @@ func MakePairs(data []int) [][]int {
 	return list
 }
 
-func main() {
-	inputData, err := helpers.ReadFileLineByLine("advent_of_code/day1/input.txt")
+func Main(filepath string) (int, int, int, error) {
+	fp := "../input.txt"
+	if filepath == "" {
+		fp = filepath
+	}
+	inputData, err := helpers.ReadFileLineByLine(fp)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
 	inputDataIntegers := []int{}
 	for _, row := range inputData {
-		inputDataIntegers = append(inputDataIntegers, castToInt(row))
+		inputDataIntegers = append(inputDataIntegers, CastToInt(row))
 	}
 	numberPairs := MakePairs(inputDataIntegers)
 	for _, row := range numberPairs {
 		a, b, c, err := CheckSum(row[0], row[1])
 		if err == nil {
-			fmt.Println(a, b, c)
-			break
+			return a, b, c, nil
 		}
 	}
+	return 0, 0, 0, errors.New("No pairs add up to 2020")
 }
