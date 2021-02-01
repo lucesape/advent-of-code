@@ -35,7 +35,7 @@ func TestMakePairs(t *testing.T) {
 }
 
 func TestMain(t *testing.T) {
-	expectedOutput := []int{547, 1473, 805731}
+	expectedOutput := []int{1721, 299, 514579}
 	co1, co2, co3, calculatedErr := Main("../input_test.txt")
 	calculatedOutput := []int{co1, co2, co3}
 

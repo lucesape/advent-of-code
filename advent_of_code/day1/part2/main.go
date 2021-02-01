@@ -32,11 +32,7 @@ func MakeTriples(data []int) [][]int {
 }
 
 func Main(filepath string) (int, int, int, int, error) {
-	fp := "../input.txt"
-	if filepath == "" {
-		fp = filepath
-	}
-	inputData, err := helpers.ReadFileLineByLine(fp)
+	inputData, err := helpers.ReadFileLineByLine(filepath)
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)

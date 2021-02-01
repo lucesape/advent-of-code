@@ -17,9 +17,7 @@ def make_pairs(data: List[int]) -> List[List[int]]:
     for i in data:
         for j in data:
             if i != j:
-                temp_list: List[int] = sorted([i, j])
-                if temp_list not in output:
-                    output.append(temp_list)
+                output.append([i, j])
     return output
 
 
@@ -31,9 +29,4 @@ def main(file: str = "advent_of_code/day1/input.txt") ->  Optional[Tuple[int, in
     for pair in number_pairs:
         res: Optional[Tuple[int, int, int]] = check_sum(x=pair[0], y=pair[1])
         if res is not None:
-            print(res)
             return(res)
-
-
-if __name__ == "__main__":
-    main()

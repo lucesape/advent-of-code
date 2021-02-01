@@ -41,7 +41,7 @@ func TestMakeTriples(t *testing.T) {
 }
 
 func TestMain(t *testing.T) {
-	expectedOutput := []int{438, 360, 1222, 192684960}
+	expectedOutput := []int{979, 366, 675, 241861950}
 	co1, co2, co3, co4, calculatedErr := Main("../input_test.txt")
 	calculatedOutput := []int{co1, co2, co3, co4}
 
