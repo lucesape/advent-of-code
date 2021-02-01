@@ -1,3 +1,5 @@
+from advent_of_code.helpers.helpers import read_file_line_by_line
+
 class Policy(object):
 
     def __init__(
@@ -29,5 +31,14 @@ def make_policy(line: str) -> Policy:
 
     return p
 
-def main(file: str):
-    pass
+
+def main(file: str = "") -> int:
+    f: List[str] = read_file_line_by_line(filepath=file)
+
+    results: List[bool] = []
+
+    for line in f:
+        policy = make_policy(line=line)
+        results.append(policy.is_password_valid())
+
+    return results.count(True)
