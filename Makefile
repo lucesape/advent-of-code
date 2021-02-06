@@ -12,7 +12,7 @@ test-py:
 
 	@echo "Running Python tests" \
 
-	python -m unittest advent_of_code/**/*_test.py
+	python -m pytest
 
 test-go:
 
