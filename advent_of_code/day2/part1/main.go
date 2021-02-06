@@ -12,11 +12,10 @@ type Policy struct {
 	UpperLimit int
 	Character  string
 	Password   string
-	IsValid    bool
 }
 
 //  tbd
-func makePolicy(line string) *Policy {
+func MakePolicy(line string) *Policy {
 	// 1-3 a: abcde
 	var policy Policy = Policy{}
 
@@ -37,9 +36,8 @@ func makePolicy(line string) *Policy {
 	return &policy
 }
 
-func isPolicyValid(p Policy) bool {
+func IsPolicyValid(p Policy) bool {
 	if p.LowerLimit <= strings.Count(p.Password, p.Character) && strings.Count(p.Password, p.Character) <= p.UpperLimit {
-		p.IsValid = true
 		return true
 	}
 	return false
@@ -54,8 +52,8 @@ func main(filepath string) int {
 	var results int
 
 	for _, line := range lines {
-		policy := makePolicy(line)
-		if isPolicyValid(*policy) {
+		policy := MakePolicy(line)
+		if IsPolicyValid(*policy) {
 			results++
 		}
 	}
