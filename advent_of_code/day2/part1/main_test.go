@@ -26,3 +26,10 @@ func TestIsPolicyValid(t *testing.T) {
 		t.Errorf("Mismatch! Expected %t, got %t", false, IsPolicyValid(p3))
 	}
 }
+
+func TestMain(t *testing.T) {
+	input_data := Main("../input_test.txt")
+	if input_data != 2 {
+		t.Errorf("Mismatch! Expected %d, got %d", 2, input_data)
+	}
+}

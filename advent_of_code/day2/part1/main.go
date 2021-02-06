@@ -17,23 +17,22 @@ type Policy struct {
 //  tbd
 func MakePolicy(line string) *Policy {
 	// 1-3 a: abcde
-	var policy Policy = Policy{}
+	p := Policy{}
+	splitLine := strings.Split(line, " ")
+	lowerLimit := strings.Split(splitLine[0], "-")[0]
+	upperLimit := strings.Split(splitLine[0], "-")[1]
+	character := strings.Split(splitLine[1], ":")[0]
+	password := splitLine[2]
 
-	splitLine := strings.Fields(line)
-	a := strings.Split(splitLine[0], "-")[0]
-	b := strings.Split(splitLine[0], "-")[1]
-	c := strings.Split(splitLine[1], ":")[0]
-	d := splitLine[2]
+	aa, _ := strconv.ParseInt(lowerLimit, 10, 64)
+	bb, _ := strconv.ParseInt(upperLimit, 10, 64)
 
-	aa, _ := strconv.ParseInt(a, 10, 64)
-	bb, _ := strconv.ParseInt(b, 10, 64)
+	p.LowerLimit = int(aa)
+	p.UpperLimit = int(bb)
+	p.Character = character
+	p.Password = password
 
-	policy.LowerLimit = int(aa)
-	policy.UpperLimit = int(bb)
-	policy.Character = c
-	policy.Password = d
-
-	return &policy
+	return &p
 }
 
 func IsPolicyValid(p Policy) bool {
@@ -43,7 +42,7 @@ func IsPolicyValid(p Policy) bool {
 	return false
 }
 
-func main(filepath string) int {
+func Main(filepath string) int {
 	lines, err := helpers.ReadFileLineByLine(filepath)
 	if err != nil {
 		fmt.Println(err)

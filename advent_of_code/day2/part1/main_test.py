@@ -1,6 +1,6 @@
 import unittest
 
-from advent_of_code.day2.part1.main import Policy, make_policy
+from advent_of_code.day2.part1.main import Policy, make_policy, main
 
 class TestDay2Part1(unittest.TestCase):
 
@@ -17,4 +17,7 @@ class TestDay2Part1(unittest.TestCase):
         p3: Policy = Policy(*(1, 4, "q", "qqqqq"))
         self.assertFalse(p3.is_password_valid())
 
+    def test_main(self):
+        input_data: int = main("advent_of_code/day2/input_test.txt")
+        self.assertEqual(input_data, 2)
     

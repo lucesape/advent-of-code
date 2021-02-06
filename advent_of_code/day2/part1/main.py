@@ -41,4 +41,6 @@ def main(file: str = "") -> int:
         policy = make_policy(line=line)
         results.append(policy.is_password_valid())
 
-    return results.count(True)
+    count = 0 if not results.count(True) else results.count(True)
+
+    return count
