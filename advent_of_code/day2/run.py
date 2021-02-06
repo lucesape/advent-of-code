@@ -1,7 +1,7 @@
 import sys
 
 import advent_of_code.day2.part1.main as part1
-# import advent_of_code.day1.part2.main as part2
+import advent_of_code.day2.part2.main as part2
 
 
 def main():
@@ -9,9 +9,9 @@ def main():
     c: int = part1.main(file="advent_of_code/day2/input.txt")
     print(c)
     
-    # print("Part 2")
-    # a, b, c, d = part2.main(file="advent_of_code/day1/input.txt")
-    # print(a, b, c, d)
+    print("Part 2")
+    c: int = part2.main(file="advent_of_code/day2/input.txt")
+    print(c)
     
     sys.exit(0)
 
