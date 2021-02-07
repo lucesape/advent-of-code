@@ -18,7 +18,7 @@ test-go:
 
 	@echo "Running Go tests" \
 	
-	go test ./...
+	go test ./tests/...
 
 test:
 
