@@ -43,5 +43,5 @@ class TestDay1Part2(unittest.TestCase):
 
     def test_main(self) -> None:
         expected_output: Optional[Tuple[int, int, int]] = 979, 366, 675, 241861950
-        actual_input: Optional[Tuple[int, int, int]] = main(file="advent_of_code/day1/input_test.txt")
+        actual_input: Optional[Tuple[int, int, int]] = main(file="tests/day1/input_test.txt")
         self.assertEqual(actual_input, expected_output)

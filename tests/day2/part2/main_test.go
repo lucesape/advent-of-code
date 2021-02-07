@@ -22,7 +22,7 @@ func TestIsPolicyValid(t *testing.T) {
 }
 
 func TestMain(t *testing.T) {
-	input_data := part2.Main("../../../advent_of_code/day2/input_test.txt")
+	input_data := part2.Main("../input_test.txt")
 	if input_data != 1 {
 		t.Errorf("Mismatch! Expected %d, got %d", 2, input_data)
 	}

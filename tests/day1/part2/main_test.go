@@ -43,7 +43,7 @@ func TestMakeTriples(t *testing.T) {
 
 func TestMain(t *testing.T) {
 	expectedOutput := []int{979, 366, 675, 241861950}
-	co1, co2, co3, co4, calculatedErr := part2.Main("../../../advent_of_code/day1/input_test.txt")
+	co1, co2, co3, co4, calculatedErr := part2.Main("../input_test.txt")
 	calculatedOutput := []int{co1, co2, co3, co4}
 
 	if calculatedErr != nil {

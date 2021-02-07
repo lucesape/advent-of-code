@@ -18,6 +18,6 @@ class TestDay2Part1(unittest.TestCase):
         self.assertFalse(p3.is_password_valid())
 
     def test_main(self):
-        input_data: int = main("advent_of_code/day2/input_test.txt")
+        input_data: int = main("tests/day2/input_test.txt")
         self.assertEqual(input_data, 2)
     
