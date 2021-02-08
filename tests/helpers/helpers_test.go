@@ -1,11 +1,14 @@
 package helpers
 
-import "testing"
+import (
+	"advent-of-code/advent_of_code/helpers"
+	"testing"
+)
 
 func TestReadFile(t *testing.T) {
-	input := "helpers.txt"
+	input := "helpers_test.txt"
 	expectedOutput := "this\nis\na\ntest\n"
-	calculatedOutput, err := ReadFile(input)
+	calculatedOutput, err := helpers.ReadFile(input)
 	if err != nil {
 		t.Errorf("%s", err)
 	}
@@ -15,9 +18,9 @@ func TestReadFile(t *testing.T) {
 }
 
 func TestReadFileLineByLine(t *testing.T) {
-	input := "helpers.txt"
+	input := "helpers_test.txt"
 	expectedOutput := []string{"this", "is", "a", "test"}
-	calculatedOutput, err := ReadFileLineByLine(input)
+	calculatedOutput, err := helpers.ReadFileLineByLine(input)
 	if err != nil {
 		t.Errorf("%s", err)
 	}
