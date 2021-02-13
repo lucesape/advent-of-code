@@ -18,7 +18,7 @@ func Main(file string) int {
 
 	inputFile, err := helpers.ReadFileLineByLine(file)
 	if err != nil {
-		fmt.Errorf("%s", err)
+		fmt.Println("%n", err)
 	}
 	var count int
 	var index int
