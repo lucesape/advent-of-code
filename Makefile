@@ -20,8 +20,14 @@ test-go:
 	
 	go test ./tests/...
 
+test-java:
+
+	@echo "Running Java tests" \
+
+	mvn test
+
 test:
 
 	@echo "Running all tests" \
 
-	make test-py && make test-go
+	make test-py && make test-go && make test-java
