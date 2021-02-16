@@ -1,3 +1,6 @@
 .vscode/
 venv/
 **__pycache__**
+**/*.class
+tests/.DS_Store
+target/
