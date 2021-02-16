@@ -1,4 +1,4 @@
-// package tests.day1.part1;
+package tests.day1.part1;
 
 import advent_of_code.day1.part1.*;
 
