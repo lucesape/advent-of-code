@@ -1,3 +1,5 @@
+from typing import List
+
 from advent_of_code.helpers.helpers import read_file_line_by_line
 
 class Policy(object):
@@ -21,7 +23,7 @@ class Policy(object):
 
 def make_policy(line: str) -> Policy:
 
-    p = Policy()
+    p: Policy = Policy()
     split_line = line.split()
 
     p.lower_limit = int(split_line[0].split("-")[0])
