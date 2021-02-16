@@ -7,7 +7,8 @@ import java.util.ArrayList;
 
 public class Helpers {
         
-    public static ArrayList <String> readFileLineByLine(String filepath) throws Exception {
+    public static ArrayList<String> readFileLineByLine(String filepath) throws Exception {
+        
         BufferedReader reader;
         ArrayList <String> lines = new ArrayList <String>();
         reader = new BufferedReader(new FileReader(filepath));
