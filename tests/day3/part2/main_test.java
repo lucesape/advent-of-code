@@ -28,7 +28,7 @@ public class main_test {
     @Test
     @DisplayName("main")
     public void testMain() throws Exception {
-        int count = part2.main("tests/day3/input_test.txt");
+        int count=(int)part2.main("tests/day3/input_test.txt");
         assertEquals(336, count);
     }
 
