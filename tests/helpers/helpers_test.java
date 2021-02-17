@@ -29,5 +29,13 @@ public class helpers_test {
 
         assertEquals(expectedResult, calculatedOutput);          
     }
+
+    @Test                                               
+    @DisplayName("readfile") 
+    public void testReadFile() throws Exception {
+        String expectedResult = "this\nis\na\ntest\n";
+        String calculatedOutput = Helpers.readFile("tests/helpers/helpers_test.txt");
+        assertEquals(expectedResult, calculatedOutput);          
+    }
     
 }

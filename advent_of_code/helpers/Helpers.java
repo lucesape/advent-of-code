@@ -22,6 +22,21 @@ public class Helpers {
 
         return lines;
     
-    } 
+    }
+
+    public static String readFile(String filepath) throws Exception {
+        BufferedReader reader;
+        reader = new BufferedReader(new FileReader(filepath));
+        String outputString = "";
+
+        String line = reader.readLine();
+        while (line != null) {
+            outputString += line + "\n";
+            line = reader.readLine();
+        }
+        reader.close();
+
+        return outputString;
+    }
                         
 }
